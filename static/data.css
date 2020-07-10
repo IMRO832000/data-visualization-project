@@ -1,0 +1,65 @@
+
+* {box-sizing: border-box}
+body{
+    background-image: linear-gradient(to right,Azure,white);
+}
+form{
+    
+    margin:120px auto;
+}
+
+input[type=number] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+select{
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+height: 20px;
+}
+
+input[type=number]:focus {
+  background-color: #ddd;
+  outline: none;
+  height: 20px;
+}
+select:focus{
+  background-color: #ddd;
+  outline: none;
+}
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 60px;
+}
+.registerbtn {
+  background-color: red;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity:1;
+}
+
+.container {
+  padding: 16px;
+}
+
+  
+ 
+  
+ 
