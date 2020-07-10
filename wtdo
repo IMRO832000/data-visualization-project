@@ -1,0 +1,151 @@
+make the graphs using js
+
+prblem passing the lists l and k to js 
+here we are using canvasjs for plotting 
+
+and data to consider for plotting graphs should be taken care of
+
+
+//
+last step for ph-1
+use the dta to chart the graphs
+
+
+<div id="chartContainer2" style="width: 45%; height: 300px;display: inline-block;"></div><br/>
+<div id="chartContainer3" style="width: 45%; height: 300px;display: inline-block;"></div>
+<div id="chartContainer4" style="width: 45%; height: 300px;display: inline-block;"></div>
+
+
+
+<div class="container">
+  <h2>Image Gallery</h2>
+  <p>The .thumbnail class can be used to display an image gallery.</p>
+  <p>The .caption class adds proper padding and a dark grey color to text inside thumbnails.</p>
+  <p>Click on the images to enlarge them.</p>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="/w3images/lights.jpg" target="_blank">
+          <img src="/w3images/lights.jpg" alt="Lights" style="width:100%">
+          <div class="caption">
+            <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="/w3images/nature.jpg" target="_blank">
+          <img src="/w3images/nature.jpg" alt="Nature" style="width:100%">
+          <div class="caption">
+            <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="/w3images/fjords.jpg" target="_blank">
+          <img src="/w3images/fjords.jpg" alt="Fjords" style="width:100%">
+          <div class="caption">
+            <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script type="text/javascript" src="{{url_for('static',filename='tri.js')}}"></script>
+
+var e = {k1,tojson,safe}
+
+
+
+
+visual encoding algorithm - medium post 
+
+
+should be able to differentiate visually with change in attribute
+
+
+we grouped it statewise and differentiate using state as parameter in some cases
+and differentiate the visuals yearwise using colors 
+group statewise
+and according to natural ordering know abt the quantity of the attribute as per column height in bar chart or the proportion of area in
+pie chart or doughnut 
+
+
+
+ var mc2 = document.getElementById("myChart2").getContext("2d");
+
+
+var dataFirst = {
+    label: "{{at1}} in 200{{a}} ",
+    data: j,
+    lineTension: 0,
+    fill: false,
+    borderColor: "rgba(0,75,120,.6)"
+  };
+
+var dataSecond = {
+    label: "{{at2}} in 200{{b}}",
+    data: h,
+    lineTension: 0,
+    fill: false,
+  borderColor: 'blue'
+  };
+
+var sData = {
+  labels: l ,
+  datasets: [dataFirst, dataSecond]
+};
+
+var chartOptions = {
+  legend: {
+    display: true,
+    position: 'top',
+    labels: {
+      boxWidth: 80,
+      fontColor: 'black'
+    }
+  },
+  scales: {
+      xAxes: [{ 
+        ticks: {
+          maxRotation: 90,
+          minRotation: 80
+        },
+        scaleLabel:{
+          display:true,
+          labelString:"STATES"
+        }
+      }],
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        },
+        scaleLabel:{
+          display:true,
+          labelString:"population"
+        }
+      }]
+    }
+};
+
+var lineChart = new Chart(mc2, {
+  type: 'line',
+  data: sData,
+  options: chartOptions
+});
+
+
+
+
+
+
+
+
+
