@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MULTI-LINE Chart </title>
+
+
+    <script type="text/javascript" src="{{url_for('static',filename='jquery-2.1.4.js')}}"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static',filename='mlc.css')}}">
+</head>
+<canvas id="myChart2" style="width: 75%; height:600px;display: inline-block;"></canvas>
+
+<body>
+
+    <script type="text/javascript">
+ 
+   var v= {{p|safe}}
+   var h= {{l|safe}}
+   var j= {{k|safe}}
+   var l={{label|safe}}
+   Chart.defaults.global.responsive = false
+
+ 
+   
+   var mc2 = document.getElementById("myChart2").getContext("2d");
+
+
+var dataFirst = {
+    label: "{{at1}} in 200{{a}} ",
+    data: j,
+    lineTension: 0,
+    fill: false,
+    borderColor: "rgba(0,75,120,.6)"
+  };
+
+var dataSecond = {
+    label: "{{at2}} in 200{{b}}",
+    data: h,
+    lineTension: 0,
+    fill: false,
+  borderColor: 'blue'
+  };
+
+var sData = {
+  labels: l ,
+  datasets: [dataFirst, dataSecond]
+};
+
+var chartOptions = {
+  legend: {
+    display: true,
+    position: 'top',
+    labels: {
+      boxWidth: 80,
+      fontColor: 'black'
+    }
+  },
+  scales: {
+      xAxes: [{ 
+        ticks: {
+          maxRotation: 90,
+          minRotation: 80
+        },
+        scaleLabel:{
+          display:true,
+          labelString:"STATES"
+        }
+      }],
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        },
+        scaleLabel:{
+          display:true,
+          labelString:"population"
+        }
+      }]
+    }
+};
+
+var lineChart = new Chart(mc2, {
+  type: 'line',
+  data: sData,
+  options: chartOptions
+});
+</script>
+
+
+    
+</body>
+</html>

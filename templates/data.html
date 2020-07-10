@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data</title>
+    <script type="text/javascript" src="{{ url_for('static',filename='jquery-2.1.4.js')}}"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static',filename='data.css')}}">
+    
+</head>
+
+<nav class="navbar navbar-default">
+</nav>
+
+     <form action = "http://localhost:5000/result" method = "POST">
+      <div class="container">
+        <h1>FILL THE DETAILS TO GENERATE GRAPH</h1>
+        
+        <hr>
+    
+        <label for="dataset-1"><b>Year 1</b></label>
+      <p><input type="number" placeholder="1-11" name="dataset-1"  min="1" max="11" required ></p>
+        <br>
+    
+        <label for="dataset-2"><b>Year 2</b></label>
+        <p><input type="number" placeholder="1-11" name="dataset-2" min="1" max="11" required></p>
+    <br>
+             
+        <span><b> Attribute-1 </b></span>   
+         
+     <p> <select name="Attribute-1" size="6">
+          <option value="1">Male literate population</option>
+          <option value="2">Male literacy rate</option>
+          <option value="3">Female literate population</option>
+          <option value="4">Female literacy rate</option>
+          <option value="5">Total literate population</option>
+        </select>
+       </p>
+        <br>
+        <span><b>Attribute-2</b></span>
+        
+       <p><select name="Attribute-2" size="6">
+            <option value="1">Male literate population</option>
+            <option value="2">Male literacy rate</option>
+            <option value="3">Female literate population</option>
+            <option value="4">Female literacy rate</option>
+            <option value="5">Total literate population</option>
+          </select>
+    </p>
+<br>
+        <hr>
+    
+        <button type="submit" class="registerbtn">SUBMIT</button>
+      </div> 
+        
+           </form>
+ 
+     <body>
+      
+      
+       
+<script type="text/javascript" src="{{url_for('static',filename='tr.js')}}"></script>
+</body>
+</html>

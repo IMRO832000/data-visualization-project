@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>result</title>
+    <script type="text/javascript" src="{{url_for('static',filename='jquery-2.1.4.js')}}"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>   
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+     <link rel="stylesheet" href="{{url_for('static',filename='result.css')}}">  
+</head>
+
+<body>
+    <div class="container">
+  <h2><i>CHOOSE THE GRAPH</i></h2>
+  <p><i>CLICK ON THE IMAGE TO VIEW THE VISUALIZATION</i></p>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="http://localhost:5000/lc" target="_blank">
+          <img src="https://www.patternfly.org/v3/pattern-library/data-visualization/line-chart/img/single-line-chart.png" alt="Lights" style="width:100%">
+          <div class="caption">
+            <p>SINGLE LINE CHARTS</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="http://localhost:5000/pie" target="_blank">
+          <img src="https://miro.medium.com/max/629/1*rzNBRBt1RCr4NsN4Lb7V1Q.png" alt="Nature" style="width:100%">
+          <div class="caption">
+            <p>PIECHART</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="http://localhost:5000/bplot" target="_blank">
+          <img src="https://cdn2.vectorstock.com/i/1000x1000/81/86/stacked-bar-chart-vector-9758186.jpg" alt="Fjords" style="width:100%">
+          <div class="caption">
+            <p>BAR-PLOT</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="http://localhost:5000/mlc" target="_blank">
+          <img src="https://cms-assets.tutsplus.com/uploads/users/442/posts/22973/image/skjdhd636363.png" alt="Lights" style="width:100%">
+          <div class="caption">
+            <p> MULTI-LINE CHART</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="http://localhost:5000/scplt" target="_blank">
+          <img src="https://datavizproject.com/wp-content/uploads/2016/06/DVP_1_100-40.png" alt="Nature" style="width:100%">
+          <div class="caption">
+            <p>Polar area Chart</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    
+
+  </div>
+
+
+
+
+
+
+</div>
+
+
+</body>
+</html>

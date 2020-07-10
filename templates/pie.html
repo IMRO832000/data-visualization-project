@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIECHART</title>
+   <script type="text/javascript" src="{{url_for('static',filename='jquery-2.1.4.js')}}"></script>
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<canvas id="myChart1" style="width: 75%; height:600px;display: inline-block;"></canvas>
+<hr>
+<canvas id="myChart2" style="width: 75%; height:600px;display: inline-block;"></canvas>
+
+<body>
+
+    <script type="text/javascript">
+       var v= {{p|safe}}
+       var h= {{l|safe}}
+       var j= {{k|safe}}
+       var l={{label|safe}}
+
+       var canvas = document.getElementById("myChart1");
+       var ctx = canvas.getContext('2d');
+// Global Options:
+       Chart.defaults.global.defaultFontColor = 'black';
+       Chart.defaults.global.defaultFontSize = 16;
+
+         var data = {
+          labels: l,
+           datasets: [
+                        {
+                fill: true,
+                backgroundColor:['#B0171F','#436EEE','#00FF7F','#FFFF00','#FF6103','#00868B','#9400D3','#FF1493','#DC143C','#FFD700','#8B2500','#848484','#FFC1C1','#00FFFF','#9F79EE','#0000FF','#CD5B45','#FF6A6A','#00CD00','#40E0D0','#FF7F00','#FF6103','#357EC7','#9BCD9B','#FFE7BA','#FF7D40','#FFC1C1','#8B1C62','#4B0082','#708090','#2F4F4F','#008B45','#FF9912','#282828','#008080'] , 
+                data: v,
+ 
+                borderColor:['#B0171F','#436EEE','#00FF7F','#FFFF00','#FF6103','#00868B','#9400D3','#FF1493','#DC143C','#FFD700','#8B2500','#848484','#FFC1C1','#00FFFF','#9F79EE','#0000FF','#CD5B45','#FF6A6A','#00CD00','#40E0D0','#FF7F00','#FF6103','#357EC7','#9BCD9B','#FFE7BA','#FF7D40','#FFC1C1','#8B1C62','#4B0082','#708090','#2F4F4F','#008B45','#FF9912','#282828','#008080'],
+                borderWidth: [2,2]
+        }
+    ]
+};
+var options = {
+        title: {
+                  display: true,
+                  text: 'Relative growth graph b/w  years 0{{a}}-{{b}}',
+                  position: 'top'
+              },
+        rotation: -0.7 * Math.PI
+};
+// Chart declaration:
+var myBarChart = new Chart(ctx, {
+    type: 'pie',
+    data: data,
+    options: options
+});
+// doughnut chart
+var c2 = document.getElementById("myChart2");
+var ct2 = c2.getContext('2d');
+// Global Options:
+ Chart.defaults.global.defaultFontColor = 'black';
+ Chart.defaults.global.defaultFontSize = 16;
+var data = {
+    labels: l,
+      datasets: [
+        {
+            fill: true,
+            backgroundColor:['#B0171F','#436EEE','#00FF7F','#FFFF00','#FF6103','#00868B','#9400D3','#FF1493','#DC143C','#FFD700','#8B2500','#848484','#FFC1C1','#00FFFF','#9F79EE','#0000FF','#CD5B45','#FF6A6A','#00CD00','#40E0D0','#FF7F00','#FF6103','#357EC7','#9BCD9B','#FFE7BA','#FF7D40','#FFC1C1','#8B1C62','#4B0082','#708090','#2F4F4F','#008B45','#FF9912','#282828','#008080'] , 
+            data: v,
+ 
+            borderColor:['#B0171F','#436EEE','#00FF7F','#FFFF00','#FF6103','#00868B','#9400D3','#FF1493','#DC143C','#FFD700','#8B2500','#848484','#FFC1C1','#00FFFF','#9F79EE','#0000FF','#CD5B45','#FF6A6A','#00CD00','#40E0D0','#FF7F00','#FF6103','#357EC7','#9BCD9B','#FFE7BA','#FF7D40','#FFC1C1','#8B1C62','#4B0082','#708090','#2F4F4F','#008B45','#FF9912','#282828','#008080'],
+            borderWidth: [2,2]
+        }
+    ]
+};
+var options = {
+        title: {
+                  display: true,
+                  text: 'Relative growth graph b/w  years 0{{a}}-{{b}}',
+                  position: 'top'
+              },
+        rotation: -0.7 * Math.PI
+};
+// Chart declaration:
+var myBarChart = new Chart(ct2, {
+    type: 'doughnut',
+    data: data,
+    options: options
+});
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar plot</title>
+    <script type="text/javascript" src="{{url_for('static',filename='jquery-2.1.4.js')}}"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<canvas id="myChart1" style="width: 75%; height:600px;display: inline-block;"></canvas>
+<canvas id="myChart2" style="width: 75%; height:600px;display: inline-block;"></canvas>
+
+<body>
+    
+<script type="text/javascript">
+    var v= {{p|safe}}
+    var h= {{l|safe}}
+    var j= {{k|safe}}
+    var l={{label|safe}}
+
+var c1=document.getElementById("myChart1");
+var ct1=c1.getContext("2d");
+
+Chart.defaults.global.defaultFontColor = 'black';
+Chart.defaults.global.defaultFontSize = 16;
+
+var d1={
+    label:"{{at1}} of year 200{{a}}",
+    borderColor:"rgba(122,75,32,.4)",
+    data : j,
+    backgroundColor:'#B0171F',
+    
+
+}
+
+var d2={
+    label:"{{at2}} of year 200{{b}}",
+    borderColor:"rgba(122,75,32,.4)",
+    data:h,
+    backgroundColor:'#436EEE',
+    
+}
+
+var fd={
+    datasets:[d1,d2],
+    labels:l
+};
+
+var options={
+    responsive: false,
+    scales: {
+      xAxes: [{ 
+        ticks: {
+          maxRotation: 90,
+          minRotation: 80
+        },
+        scaleLabel:{
+          display:true,
+          labelString:"STATES"
+        }
+      }],
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        },
+        scaleLabel:{
+          display:true,
+          labelString:"population"
+        }
+      }]
+    }
+  };
+
+var ch= new Chart(ct1,{
+    type:"bar",
+    data:fd,
+    options:options
+})
+
+
+c2=document.getElementById("myChart2");
+ct2=c2.getContext('2d');
+
+var sfd={
+  dataset:[d1,d2],
+  label:l
+};
+
+
+var opt2={
+    responsive: false,
+    scales: {
+      xAxes: [{stacked:true, 
+        ticks: {
+          maxRotation: 90,
+          minRotation: 80
+        },
+        scaleLabel:{
+          display:true,
+          labelString:"STATES"
+        }
+      }],
+      yAxes: [{stacked:true,
+        ticks: {
+          beginAtZero: true
+        },
+        scaleLabel:{
+          display:true,
+          labelString:"population"
+        }
+      }]
+    }
+  };
+
+
+
+
+
+
+var ch2= new Chart(ct2,{
+  type:'bar',
+  data:fd,
+  options:opt2
+}); 
+
+
+
+
+</script>
+
+
+</body>
+</html>
